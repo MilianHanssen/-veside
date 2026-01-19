@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NORDIC GOLF GEAR - Produkter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+
+    <style>
+      /* Sørger for at alle produktbilder har samme størrelse og ser bra ut */
+      .card-img-top {
+        height: 250px;
+        object-fit: cover;
+      }
+      .card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="Main.html">NORDIC GOLF GEAR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="Main.html">Hjem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="produkter.html">Produkter</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Om oss</a></li>
+            <li class="nav-item">
+              <a class="btn btn-dark btn-sm ms-2" href="produkter.html"
+                >Kjøp nå</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-5 bg-light border-bottom">
+      <div class="container text-center">
+        <h1 class="h3 fw-bold">VÅRT UTVALG</h1>
+        <p class="text-muted mb-0">
+          Kvalitetsutstyr for den seriøse golfspilleren
+        </p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <h2 class="h5 text-center mb-5">Velg din modell</h2>
+
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center border-0">
+            <img
+              src="premium2.webp"
+              class="card-img-top rounded-top"
+              alt="Premium Golfbag"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Premium Golfbag</h5>
+              <p class="card-text text-muted">
+                Laget i ekte skinn-finish. Lett, slitesterk og perfekt for
+                turneringer.
+              </p>
+              <p class="fw-bold text-dark">4 999,-</p>
+              <button class="btn btn-dark w-100">Kjøp nå</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center border-0">
+            <img
+              src="standard.avif"
+              class="card-img-top rounded-top"
+              alt="Standard Golfbag"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Standard Golfbag</h5>
+              <p class="card-text text-muted">
+                Vår bestselger. God kvalitet og smarte løsninger til en rimelig
+                pris.
+              </p>
+              <p class="fw-bold text-dark">2 999,-</p>
+              <button class="btn btn-dark w-100">Kjøp nå</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm text-center border-0">
+            <img
+              src="junior.webp"
+              class="card-img-top rounded-top"
+              alt="Junior Golfbag"
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Junior Golfbag</h5>
+              <p class="card-text text-muted">
+                Tilpasset lengde og vekt for unge golfspillere som vil opp og
+                frem.
+              </p>
+              <p class="fw-bold text-dark">899,-</p>
+              <button class="btn btn-dark w-100">Kjøp nå</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 bg-dark text-white mt-auto">
+      <div class="container text-center">
+        <p class="mb-0">2026 NORDIC GOLF GEAR. Alle rettigheter reservert.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
