@@ -1,39 +1,47 @@
-/* Base */
+/* Grunnleggende stil */
 body {
-  height: 100%;
-}
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f7f9fc;
-  color: #000000;
+  font-family: Arial, sans-serif; /* Standard font */
+  background-color: #f0f2f5; /* Enkel gråfarge */
+  color: #333; /* Litt mykere sort */
   margin: 0;
+  padding: 0;
 }
 
-/* Auth-panel */
+/* Innloggings-panel (Auth-panel) */
 .auth-panel {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: 340px;
-  max-width: 90vw;
-  background: #fff;
-  border-left: 1px solid #e9ecef;
-  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.08);
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
-  z-index: 1200;
+  height: 100%;
+  width: 300px;
+  background-color: white;
+  border-left: 2px solid #ccc; /* Enklere border */
+  display: none; /* Bruker display i stedet for transform for enkelhets skyld */
+  z-index: 100;
 }
+
+/* Denne klassen legger du til med JS for å vise panelet */
 .auth-panel.open {
-  transform: translateX(0);
+  display: block;
 }
 
-/* Små hjelpere (optional) */
+/* Enkle bokser/kort */
 .card-hover {
-  transition: box-shadow 0.2s ease;
-}
-.card-hover:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 15px;
+  background: #fff;
 }
 
-/* Utility classes */
+.card-hover:hover {
+  background-color: #f9f9f9; /* Enkel hover-effekt i stedet for skygge */
+}
+
+/* Hjelpeklasser */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
