@@ -45,3 +45,13 @@ body {
 .mt-20 {
   margin-top: 20px;
 }
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
