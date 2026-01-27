@@ -65,3 +65,38 @@ body {
   color: white;
   padding: 100px 0;
 }
+/* Styling for innloggings-modalen */
+
+/* Setter overskriften til svart */
+#loginModal .modal-title {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* Setter alle merkelapper (E-post, Passord) til svart */
+#loginModal .form-label {
+  color: #000000;
+}
+
+/* Sikrer at teksten man skriver inn i feltene også er svart */
+#loginModal .form-control {
+  color: #000000;
+}
+
+/* Endrer bakgrunnen på selve kortet hvis du vil ha det helt hvitt og rent */
+#loginModal .modal-content {
+  border: none;
+  border-radius: 12px;
+}
+#userStatusBtn {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+  opacity: 1 !important;
+}
+
+/* Effekt når du holder musa over knappen */
+#userStatusBtn:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}

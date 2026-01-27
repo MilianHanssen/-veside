@@ -39,9 +39,15 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Om oss</a></li>
             <li class="nav-item">
-              <a class="btn btn-dark btn-sm ms-2" href="produkter.html"
-                >Kjøp nå</a
+              <button
+                type="button"
+                class="btn btn-dark btn-sm ms-2"
+                id="userStatusBtn"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
               >
+                Logg inn
+              </button>
             </li>
           </ul>
         </div>
@@ -124,8 +130,126 @@
       <div class="container text-center">
         <p class="mb-0">2026 NORDIC GOLF GEAR. Alle rettigheter reservert.</p>
       </div>
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Logg inn</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-post</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Passord</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-dark w-100">
+                  Logg inn
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Logg inn</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-post</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                    placeholder="din@epost.no"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Passord</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-dark w-100">
+                  Logg inn
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const userStatusBtn = document.getElementById("userStatusBtn");
+
+      // Denne funksjonen oppdaterer knappen hvis info finnes
+      function updateButton() {
+        const savedUser = localStorage.getItem("golfUser");
+        if (savedUser) {
+          const user = JSON.parse(savedUser);
+          // splitter e-posten ved @ for å få et "brukernavn"
+          const name = user.email.split("@")[0];
+          userStatusBtn.innerText = "Hei, " + name + "!";
+          userStatusBtn.classList.replace("btn-dark", "btn-outline-dark");
+        }
+      }
+
+      // KJØRER SJEKKEN MED EN GANG SIDEN LASTES
+      window.addEventListener("load", updateButton);
+
+      // Håndterer innsending hvis man logger inn fra denne siden
+      if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("email").value;
+          localStorage.setItem("golfUser", JSON.stringify({ email: email }));
+
+          const modalInstance = bootstrap.Modal.getInstance(
+            document.getElementById("loginModal"),
+          );
+          modalInstance.hide();
+
+          updateButton(); // Oppdaterer knappen med en gang uten refresh
+        });
+      }
+    </script>
   </body>
 </html>
